@@ -1,6 +1,6 @@
-FROM node:19-alpine
+FROM node:19.1-alpine3.15
 
-WORKDIR /var/app
+WORKDIR /app
 
 COPY . .
 
@@ -8,4 +8,4 @@ RUN npm install
 
 EXPOSE 4000
 
-CMD [ "node", "--watch", "src/index.js" ]
+CMD ["npm", "start"]

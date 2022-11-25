@@ -1,11 +1,13 @@
-version: '3.9'
+version: "3.8"
 services:
-  application:
-    container_name: nodev19
+  backend:
+    container_name: nodejsv19
     restart: unless-stopped
     build:
       context: .
+      dockerfile: Dockerfile
     ports:
       - 4000:4000
     volumes:
-      -'./src:/var/app/src'
+      - ./src:/app/src
+      - /app/node_modules
