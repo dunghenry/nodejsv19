@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  application:
+    container_name: nodev19
+    restart: unless-stopped
+    build:
+      context: .
+    ports:
+      - 4000:4000
+    volumes:
+      -'./src:/var/app/src'
